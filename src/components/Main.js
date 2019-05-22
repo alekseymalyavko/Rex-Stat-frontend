@@ -12,7 +12,7 @@ class Main extends React.Component {
 
   async getData(e) {
     // const { data } = await axios.get(process.env.API_URL || 'http://localhost:3333/api/stats')
-    const { data } = await axios.get((process.env.REACT_APP_API || 'http://localhost:3333/') + '/api/stats')
+    const { data } = await axios.get((process.env.REACT_APP_API || 'http://localhost:3333') + '/api/stats')
     this.setState({ data })
   }
 
