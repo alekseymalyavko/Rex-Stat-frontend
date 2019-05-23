@@ -1,13 +1,15 @@
 import React from 'react';
+// import Home from './components/Home';
 import Main from './components/Main';
 import Header from './components/Header';
-
-import './App.css';
+import Footer from './components/Footer';
 
 const App = () => (
-  <div>
+  <div className='body'>
     <Header />
-    <Main />
+    {/* <Home /> */}
+    <Main/>
+    <Footer />
   </div>
 )
 
