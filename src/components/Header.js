@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const header = () => {
   return (
     <header>
       <div className="logo">
-          <a href="/"><img src={require('../assets/images/rex-logo.png')}  alt="logo"/></a>
+        <Link to='/'><img src={require('../assets/images/rex-logo.png')}  alt="logo"/></Link>
       </div>
       <nav className="navigation">
           <ul className="navigation__menu">
               <li className="navigation__menu__item">
-                  <a className="menu__item__link" href="/">Home</a>
+                  <Link to='/' className="menu__item__link">Home</Link>
               </li>
               <li className="navigation__menu__item">
-                  <a className="menu__item__link menu__item__link--active" href="/">Sign In</a>
+                <Link to='/main' className="menu__item__link menu__item__link--active">Sign In</Link>
               </li>
           </ul>
       </nav>

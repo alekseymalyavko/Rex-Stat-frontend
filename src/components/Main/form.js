@@ -15,21 +15,19 @@ class Form extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit = async (e) => {
     e.preventDefault();
     const group = this.state.value.split('/').pop();
-    this.props.onGetData(group);
+    this.props.onStartLoading(group);
 
-    const basicData = async (group) => {
+    const basicData = 
       await HTTP.get('/api/stats/basic', {
         params: {
           group
         }
       })
-    }
-
-    basicData(group)
-
+    const result = basicData.data;
+    this.props.onGetData(result)
   }
 
   render() {    
