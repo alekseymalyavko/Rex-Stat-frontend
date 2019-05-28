@@ -64,6 +64,7 @@ img {
   border-radius: 2px;
   color: black;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .menu__item__link--active {
@@ -73,6 +74,11 @@ img {
 
 .menu__item__link:hover {
 color: white;
+}
+
+.chart_wrapper {
+  width: 85%;
+  margin: 0 auto;
 }
 
 .userInfo {
@@ -545,10 +551,10 @@ display: flex;
 
 #exit {
   position: absolute;
-  top: 5px;
+  top: 0px;
   right: 10px;
   cursor: pointer;
-  padding: 10px;
+  font-size: 35px;
 }
 
 .form-wrapper {
@@ -564,52 +570,54 @@ display: flex;
 
 .form {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 35%;
-  padding: 50px;
-  border-radius: 10px;
+  width: 400px;
+  min-height: 250px;
+  padding: 20px 15px;
+  border-radius: 3px;
   background: #ff5151;
   text-align: center;
-  border: 1px solid;
   z-index: 9;
 }
 
 .form__header {
+  margin: 0;
   margin-bottom: 30px;
 }
 
-form {
-  display: flex;
-  justify-content: center;
+.form form {
+  display: block;
 }
-
-form > input {
+.form form > input {
+  display: block;
   width: 100%;
-  margin: 10px;
-  padding: 13px;
+  margin: 15px 0;
   font-size: 16px;
   border-radius: 3px;
-  outline: none;
   border: none;
+  padding: 2px 10px;
+  height: 40px;
 }
-
-form > button {
+.form form > input[type="submit"] {
   width: 40%;
-  padding: 7px;
   background: #b22e70;
   border: none;
   outline: none;
-  margin-top: 30px;
+  margin: 0 auto;
+  margin-top: 25px;
   color: white;
   border-radius: 3px;
   cursor: pointer;
   font-size: 16px;
 }
-
-form > button:hover {
-  background: green;
+.error_text {
+  color: #2b0000;
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+form {
+  display: flex;
+  justify-content: center;
 }
 
 input:focus::-webkit-input-placeholder {

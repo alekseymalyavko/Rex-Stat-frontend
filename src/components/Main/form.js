@@ -28,6 +28,7 @@ class Form extends React.Component {
           }
         })
       const result = basicData.data;
+      console.log(result)
       this.props.onGetData(result)
     }
   }

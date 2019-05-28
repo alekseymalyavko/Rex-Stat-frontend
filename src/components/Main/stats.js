@@ -3,14 +3,16 @@ import BasicStats from './basicStats';
 import BotStats from './botStats';
 import MarkStats from './markStats';
 import ActivityStats from './activityStats';
-import Chart from 'chart.js';
+import Line from './line';
+import Pie from './pie';
 
 const stats = (props) => {
   const basicInfo = props.groupData.basicInfo;
 
-  let calculatedData = {}, members, bots, percentOfBots, dataForMark, allActivity
+  let calculatedData = {}, members, bots, percentOfBots, dataForMark, allActivity, statistics
   
   if (props.groupData.statistics.isAvailable !== 0) {
+    statistics = props.groupData.statistics
     calculatedData = props.groupData.calculatedData
     members = props.groupData.members
     bots = members.bots.length;
@@ -19,24 +21,34 @@ const stats = (props) => {
     allActivity = props.groupData.allActivity
   }
   
-  // const statistics = props.groupData.statistics
   // const pinnedPost = props.groupData.pinnedPost
   
   return (
     <div className="work__items">
-        
         { basicInfo && calculatedData && 
             (
                 <BasicStats basicInfo={basicInfo} calculatedData={calculatedData}/>
             )
         }
         
+        { statistics && 
+            (
+                <Line statistics={statistics}/>
+            )
+        }
+
         { percentOfBots && calculatedData && 
             (
                 <BotStats percentOfBots={percentOfBots} calculatedData={calculatedData}/>
             )
         }
 
+        { percentOfBots && 
+            (
+                <Pie percentOfBots={percentOfBots}/>
+            )
+        }
+        
         { percentOfBots && calculatedData && 
            (
                <MarkStats dataForMark={dataForMark}/>
