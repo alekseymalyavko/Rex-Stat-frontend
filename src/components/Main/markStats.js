@@ -7,9 +7,9 @@ const markStats = (props) => {
     <div className="work__items__item markovInfo" >
       <h2>Данные для поиска a, y:</h2>
       <div>
-          <p>Уязвимые: [{dataForMark.markS}]</p>
-          <p>Зараженные: [{dataForMark.markI}]</p>                
-          <p>Неуязвимые: [{dataForMark.markR}]</p>           
+          <p>Уязвимые: [{dataForMark.markS || 'no data'}]</p>
+          <p>Зараженные: [{dataForMark.markI || 'no data'}]</p>                
+          <p>Неуязвимые: [{dataForMark.markR || 'no data'}]</p>           
       </div>
     </div>
   )

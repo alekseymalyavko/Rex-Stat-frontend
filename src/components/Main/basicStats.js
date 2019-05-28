@@ -17,12 +17,12 @@ const basicStat = (props) => {
           { calculatedData.S ? 
               (
                 <div>
-                  <p>S (уязвимые):              {calculatedData.S}</p>
-                  <p>I (зараженные):            {calculatedData.I}</p>
-                  <p>R (невосприимчивые):       {calculatedData.R}</p>
-                  <p>N (общее количество):      {calculatedData.N}</p>
-                  <p>q (частота присоединения): {calculatedData.q}</p>
-                  <p>b (частота выхода):        {calculatedData.b}</p>
+                  <p>S (уязвимые):              {calculatedData.S || 'no data'}</p>
+                  <p>I (зараженные):            {calculatedData.I || 'no data'}</p>
+                  <p>R (невосприимчивые):       {calculatedData.R || 'no data'}</p>
+                  <p>N (общее количество):      {calculatedData.N || 'no data'}</p>
+                  <p>q (частота присоединения): {calculatedData.q || 'no data'}</p>
+                  <p>b (частота выхода):        {calculatedData.b || 'no data'}</p>
                 </div>
             ) : (
                 <h3>Статистика группы закрыта</h3>
