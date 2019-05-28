@@ -17,17 +17,19 @@ class Form extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const group = this.state.value.split('/').pop();
-    this.props.onStartLoading(group);
-
-    const basicData = 
-      await HTTP.get('/api/stats/basic', {
-        params: {
-          group
-        }
-      })
-    const result = basicData.data;
-    this.props.onGetData(result)
+    if (this.state.value !== '') {
+      const group = this.state.value.split('/').pop();
+      this.props.onStartLoading(group);
+  
+      const basicData = 
+        await HTTP.get('/api/stats/basic', {
+          params: {
+            group
+          }
+        })
+      const result = basicData.data;
+      this.props.onGetData(result)
+    }
   }
 
   render() {    

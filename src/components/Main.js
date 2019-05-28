@@ -8,7 +8,7 @@ class Main extends React.Component {
     super(props);
     this.state = {
       loading: false,
-      currentGroup: '',
+      currentGroup: null,
       groupData: null
     };
   }
@@ -41,19 +41,22 @@ class Main extends React.Component {
               <Loading currentGroup={this.state.currentGroup}/>
             )
           }
-          <div className="work__items" id="place">
-            { this.state.groupData === null ? (
-                <div className="work__items__item">
-                    <div className="work__item__img">
-                        <h1>Your next search group</h1>
-                        <p>{this.state.groupData}</p>
-                    </div>
-                </div>
-              ) : (
-                <Stats groupData={this.state.groupData}/>
-              )
-            }     
-          </div>     
+          
+          { this.state.groupData === null && this.state.currentGroup === null && (
+            <div className="work__items">
+              <div className="work__items__item">
+                  <div className="work__items__item_text">
+                      <h1>Your next search group</h1>
+                      <p>{this.state.groupData}</p>
+                  </div>
+              </div>
+            </div>
+            )
+          }     
+          { this.state.groupData !== null && !this.state.loading && (
+              <Stats groupData={this.state.groupData}/>
+            )
+          }
           
           
       </section>
