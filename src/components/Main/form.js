@@ -20,16 +20,22 @@ class Form extends React.Component {
     if (this.state.value !== '') {
       const group = this.state.value.split('/').pop();
       this.props.onStartLoading(group);
-  
-      const basicData = 
-        await HTTP.get('/api/stats/basic', {
-          params: {
-            group
-          }
-        })
-      const result = basicData.data;
-      console.log(result)
-      this.props.onGetData(result)
+      
+      try {
+        const basicData = 
+          await HTTP.get('/api/stats/basic', {
+            params: {
+              group
+            }
+          })
+        
+        const result = basicData.data;
+        console.log(result)
+        this.props.onGetData(result)
+      } catch(err) {
+       console.log(err)
+       this.props.onGetData(0)
+      } 
     }
   }
 

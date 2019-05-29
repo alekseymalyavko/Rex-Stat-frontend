@@ -2,11 +2,13 @@ import React from 'react';
 import Form from './Main/form';
 import Loading from './Main/loading';
 import Stats from './Main/stats';
+import SaveButton from './Main/saveButton';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isError: false,
       loading: false,
       currentGroup: null,
       groupData: null
@@ -15,16 +17,24 @@ class Main extends React.Component {
   
   setCurrentGroup(data) {
     this.setState({
+      isError: false,
       currentGroup: data,
       loading: true
     })
   }
 
   onGetData(data) {
-    this.setState({
-      groupData: data,
-      loading: false
-    })
+    if (data === 0) {
+      this.setState({
+        isError: true
+      })
+    } else {
+      this.setState({
+        groupData: data,
+        loading: false,
+        isError: false
+      })
+    }
   }
 
   render() {
@@ -37,8 +47,23 @@ class Main extends React.Component {
               />
           </div>
 
-          { this.state.loading && (
+          { this.state.loading && !this.state.isError && (
               <Loading currentGroup={this.state.currentGroup}/>
+            )
+          }
+
+          { this.state.isError && 
+            (
+              <div className="work__items">
+                <div className="work__items__item">
+                    <div className="work__items__item_text">
+                        <h1>Error :( 
+                          <br/>
+                          please try again or choose another group
+                        </h1>
+                    </div>
+                </div>
+              </div>
             )
           }
           
@@ -57,7 +82,6 @@ class Main extends React.Component {
               <Stats groupData={this.state.groupData}/>
             )
           }
-          
           
       </section>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Home from './components/Home';
 import Main from './components/Main';
@@ -33,8 +33,11 @@ class App extends React.Component {
         <Header openPopup={(e) => this.openPopup(e)}/>
         <Popup isPopupOpen={this.state.isPopupOpen} closePopup={(e) => this.closePopup(e)}/>
           <Switch>
-            <Route exact path='/' component={Home}/>
+            <Route exact path='/' 
+                   render={() => <Home openPopup={(e) => this.openPopup(e)}/>}
+            />
             <Route path='/main' component={Main}/>
+            <Redirect to='/'/>
           </Switch>
         <Footer />
       </div>

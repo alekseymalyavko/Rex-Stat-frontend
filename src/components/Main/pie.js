@@ -33,13 +33,13 @@ const pie = (props) => {
             display:true,
             text: 'Share of bots',
             fontSize: 28,
-            fontColor: '#fff'
+            fontColor: '#000'
           },
           legend: {
             display:true,
-            position: 'top',
+            position: 'left',
             labels: {
-              fontColor: '#fff',
+              fontColor: '#000',
               fontSize: 19,
             }
           },

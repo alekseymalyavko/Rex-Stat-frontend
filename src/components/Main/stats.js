@@ -5,6 +5,7 @@ import MarkStats from './markStats';
 import ActivityStats from './activityStats';
 import Line from './line';
 import Pie from './pie';
+import SaveButton from './saveButton';
 
 const stats = (props) => {
   const basicInfo = props.groupData.basicInfo;
@@ -59,6 +60,10 @@ const stats = (props) => {
            (
                <ActivityStats members={members} allActivity={allActivity}/>
            )
+        }
+        { members && allActivity && (
+               <SaveButton groupData={props.groupData}/>
+            )
         }
 
     </div>

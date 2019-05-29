@@ -9,6 +9,11 @@ class Home extends React.Component {
     }
     this.dino = React.createRef();
   }
+
+  openPopup(e) {
+    this.props.openPopup()
+  }
+
   handlerEye(e) {
     const eye = this.dino.current.dinoEye.current;
     const x = eye.offsetLeft + (eye.offsetWidth / 2);
@@ -30,7 +35,7 @@ class Home extends React.Component {
             <h3>Discover vital insights within the billions of conversations happening online every day. Be the first to act on the next
             big opportunity in your market.</h3>
             <div className="button">
-                <span className="btn module" >Get Started</span>
+                <span onClick={(e) => this.openPopup(e)} className="btn module" >Get Started</span>
             </div>
         </div>
       </section>

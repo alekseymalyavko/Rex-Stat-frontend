@@ -10,9 +10,13 @@ import { Line } from 'react-chartjs-2';
 //   return color;
 // }
 
-const color1 = '#37d862';
-const color2 = '#ff5f5f';
-const color3 = '#2a43ff';
+// const color1 = '#37d862';
+// const color2 = '#ff5f5f';
+// const color3 = '#2a43ff';
+
+const color1 = '#00ff44ad';
+const color2 = '#ff2d2d8c';
+const color3 = '#1c36ff9c';
 
 const line = (props) => {
 
@@ -60,13 +64,13 @@ const line = (props) => {
             display:true,
             text: 'Statistics',
             fontSize: 35,
-            fontColor: '#fff'
+            fontColor: '#000'
           },
           legend: {
             display:true,
             position: 'top',
             labels: {
-              fontColor: '#fff',
+              fontColor: '#000',
               fontSize: 19,
             }
           },
@@ -81,13 +85,13 @@ const line = (props) => {
           scales: {
             xAxes: [{ 
               ticks: {
-                fontColor: "#fff",
+                fontColor: "#000",
                 fontSize: 13,
               },
             }],
             yAxes: [{
               ticks: {
-                fontColor: "#fff",
+                fontColor: "#000",
                 fontSize: 17,
               },
             }],
