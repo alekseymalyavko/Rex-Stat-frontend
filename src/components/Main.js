@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './Main/form';
 import Loading from './Main/loading';
 import Stats from './Main/stats';
+import DATA from './Main/data';
 import SaveButton from './Main/saveButton';
 
 class Main extends React.Component {
@@ -11,7 +12,8 @@ class Main extends React.Component {
       isError: false,
       loading: false,
       currentGroup: null,
-      groupData: null
+      groupData: null,
+      // groupData: DATA[0]
     };
   }
   
@@ -20,6 +22,13 @@ class Main extends React.Component {
       isError: false,
       currentGroup: data,
       loading: true
+    })
+  }
+
+  onSaveData() {
+    this.setState({
+      currentGroup: null,
+      groupData: null
     })
   }
 
@@ -82,7 +91,11 @@ class Main extends React.Component {
               <Stats groupData={this.state.groupData}/>
             )
           }
-          
+
+          { this.state.groupData !== null && this.state.loading === false && this.state.groupData.allActivity &&  (
+              <SaveButton groupData={this.state.groupData} onSaveData={ (e) => this.onSaveData(e)}/>
+            )
+          }          
       </section>
     )
   }

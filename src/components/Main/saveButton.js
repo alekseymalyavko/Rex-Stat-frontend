@@ -8,13 +8,15 @@ const saveButton = (props) => {
       await HTTP.post('/api/stats/', {
           ...groupData
       })
-    debugger
-    console.log(save)
+    if (save.status === 200) {
+      alert('Statistics saved!')
+      props.onSaveData()
+    }
   }
 
   return (
-    <div className="button" onClick={ () => saveData(groupData) }>
-      <span className="btn module">Save Data</span>
+    <div className="button_work" onClick={ () => saveData(groupData) }>
+      <span className="btn module">Сохранить данные</span>
     </div>
   )
 }

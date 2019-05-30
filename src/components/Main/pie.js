@@ -9,7 +9,7 @@ const pie = (props) => {
   const users = 100 - props.percentOfBots;
 
   const data = {
-    labels: ['Bots', 'Users'],
+    labels: ['Боты', 'Пользователи'],
     datasets: [
       {
         label: 'amount',
@@ -25,19 +25,19 @@ const pie = (props) => {
       <Pie
         data={data}
         width={100}
-        height={40}
+        height={25}
         options={{ 
           responsive: true,
           maintainAspectRatio: true,
           title: {
             display:true,
-            text: 'Share of bots',
+            text: 'Соотношение ботов с настоящими пользователями',
             fontSize: 28,
             fontColor: '#000'
           },
           legend: {
             display:true,
-            position: 'left',
+            position: 'bottom',
             labels: {
               fontColor: '#000',
               fontSize: 19,

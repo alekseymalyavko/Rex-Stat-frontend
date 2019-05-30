@@ -29,21 +29,21 @@ const line = (props) => {
     labels: time,
     datasets: [
       {
-        label: 'activity',
+        label: 'Активность',
         data: activity,
         borderColor: color1,
         backgroundColor: color1,
         borderWidth: 2,
       },
       {
-        label: 'reach',
+        label: 'Охват',
         data: reach,
         borderColor: color2,
         backgroundColor: color2,
         borderWidth: 1,
       },
       {
-        label: 'visitors',
+        label: 'Посещения',
         data: visitors,
         borderColor: color3,
         backgroundColor: color3,
@@ -62,7 +62,7 @@ const line = (props) => {
           maintainAspectRatio: true,
           title: {
             display:true,
-            text: 'Statistics',
+            text: 'Статистика',
             fontSize: 35,
             fontColor: '#000'
           },

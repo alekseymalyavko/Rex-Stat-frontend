@@ -4,8 +4,12 @@ import BotStats from './botStats';
 import MarkStats from './markStats';
 import ActivityStats from './activityStats';
 import Line from './line';
+import LineActivity from './lineActivities';
+import LineVisitors from './lineVisitors';
+import LineCities from './lineCities';
+import LineAge from './lineAge';
+
 import Pie from './pie';
-import SaveButton from './saveButton';
 
 const stats = (props) => {
   const basicInfo = props.groupData.basicInfo;
@@ -38,9 +42,33 @@ const stats = (props) => {
             )
         }
 
+        { statistics && 
+            (
+                <LineActivity statistics={statistics}/>
+            )
+        }
+
+        { statistics && 
+            (
+                <LineVisitors statistics={statistics}/>
+            )
+        }
+
+        { statistics && 
+            (
+                <LineCities statistics={statistics}/>
+            )
+        }
+
+        { statistics && 
+            (
+                <LineAge statistics={statistics}/>
+            )
+        }
+
         { percentOfBots && calculatedData && 
             (
-                <BotStats percentOfBots={percentOfBots} calculatedData={calculatedData}/>
+                <BotStats count={basicInfo.count} percentOfBots={percentOfBots} calculatedData={calculatedData}/>
             )
         }
 
@@ -60,10 +88,6 @@ const stats = (props) => {
            (
                <ActivityStats members={members} allActivity={allActivity}/>
            )
-        }
-        { members && allActivity && (
-               <SaveButton groupData={props.groupData}/>
-            )
         }
 
     </div>

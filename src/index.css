@@ -80,10 +80,11 @@ color: white;
 
 .chart_wrapper {
   width: 85%;
-  margin: 0 auto;
+  margin: 20px auto;
   background: white;
   border-radius: 5px;
   padding: 15px 5px;
+  transition: 0.3s;
 }
 
 .userInfo {
@@ -185,7 +186,11 @@ footer {
   margin: 0 auto;
   margin-top: 50px; 
 }
-
+.button_work {
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 90px;
+}
 .btn {
   position: relative;
   padding: 15px;
@@ -262,8 +267,12 @@ footer {
   overflow: hidden;
   border: 1px solid #92094f;
   box-shadow: 1px 5px 20px #5a002f;
+  transition: 0.3s;
 }
-
+.work__items__item:hover,
+.chart_wrapper:hover {
+  box-shadow: 10px 7px 15px 0px #50002c;
+}
 .work__item__img {
   width: 25%;
   max-width: 400px;
@@ -739,11 +748,7 @@ input[type="submit"]:hover {
   border-radius: 10px;
 }
 
-.workspace__search {
-  display: flex;
-  align-items: center;
-}
-.workspace__search > input {
+.workspace__search input {
   padding: 10px 25px;
   outline: none;
   border: none;
@@ -752,15 +757,38 @@ input[type="submit"]:hover {
   height: 40px;
 }
 
-.workspace__search > input:first-child {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+.workspace__search > span {
+  display: flex;
+  align-items: center;
+}
+.workspace__search .dates > span {
+  display: flex;
+  flex-direction: column;
+}
+.workspace__search .dates label {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.workspace__search > span:first-child input {
+  border-radius: 3px;
+  width: 252px;
+}
+
+.workspace__search > span:first-child span:last-child {
+  margin-left: 10px;
+}
+.workspace__search > span:last-child {
+  margin-top: 15px;
+}
+.workspace__search > span:last-child input:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
   width: 400px;
 } 
 
-.workspace__search > input:last-child {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+.workspace__search > span:last-child > input:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .functional__network {

@@ -10,7 +10,7 @@ const basicStat = (props) => {
         <div className="work__item__img">
             <h4>Группа: {basicInfo.name}</h4>
             <a target="_blank" rel="noopener noreferrer" href={linkGroup}>
-              <img src={basicInfo.photo_100} alt="groupImg"/>
+              <img src={basicInfo.photo_200} alt="groupImg"/>
             </a>
         </div>
         <div className="work__item__text">
