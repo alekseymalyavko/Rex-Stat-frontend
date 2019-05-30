@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './Main/form';
 import Loading from './Main/loading';
 import Stats from './Main/stats';
+import { Link } from 'react-router-dom'
 import DATA from './Main/data';
 import SaveButton from './Main/saveButton';
 
@@ -82,6 +83,9 @@ class Main extends React.Component {
                   <div className="work__items__item_text">
                       <h1>Your next search group</h1>
                       <p>{this.state.groupData}</p>
+                      <Link to='/collection' className="btn main">
+                          Look saved data
+                      </Link>
                   </div>
               </div>
             </div>

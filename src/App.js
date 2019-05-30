@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Home from './components/Home';
 import Main from './components/Main';
+import Collection from './components/Collection';
 import Popup from './components/Popup';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -37,6 +38,7 @@ class App extends React.Component {
                    render={() => <Home openPopup={(e) => this.openPopup(e)}/>}
             />
             <Route path='/main' component={Main}/>
+            <Route path='/collection' component={Collection}/>
             <Redirect to='/'/>
           </Switch>
         <Footer />
