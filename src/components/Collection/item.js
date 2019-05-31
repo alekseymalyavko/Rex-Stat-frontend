@@ -7,7 +7,7 @@ class Item extends React.Component {
     this.state = {
       isDeleted: false,
       id: props.groupData._id,
-      data: props.groupData
+      data: {...props.groupData} 
     };
   }
 
@@ -25,14 +25,17 @@ class Item extends React.Component {
   }
 
   open () {
-    const data = this.state.data;
-    this.props.setCurrentGroup(data)
+    const id = this.state.id;
+    this.props.setCurrentGroup(id)
   }
 
   render() {
-    const name = this.state.data.basicInfo.name
-    const img = this.state.data.basicInfo.photo_100
-    const dataRange = [this.state.data.statistics.date.shift(), this.state.data.statistics.date.pop()]
+    const lastIndex = this.state.data.statistics.date.length - 1;
+
+    const name = this.state.data.basicInfo.name;
+    const img = this.state.data.basicInfo.photo_100;
+    const linkGroup = `https://vk.com/${this.state.data.basicInfo.screen_name}`
+    const dataRange = [this.state.data.statistics.date[0], this.state.data.statistics.date[lastIndex]];
     
     if (this.state.isDeleted) {
       return null
@@ -45,7 +48,9 @@ class Item extends React.Component {
             {name}
           </div>
           <div className="group_item_img">
-            <img src={img} alt="img"/>
+            <a target="_blank" rel="noopener noreferrer" href={linkGroup}>
+              <img src={img} alt="img"/>
+            </a>
           </div>
           <div className="group_item_range">
             Промежуток времени:

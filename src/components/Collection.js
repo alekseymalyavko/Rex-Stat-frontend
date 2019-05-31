@@ -2,7 +2,6 @@ import React from 'react';
 import { HTTP } from '../request/request';
 import Item from './Collection/item';
 import Stats from './Main/stats';
-// import DATA from './Collection/data';
 
 class Test extends React.Component {
   constructor(props) {
@@ -21,9 +20,11 @@ class Test extends React.Component {
     this.getData()
   }
   
-  setCurrentGroup(data) {
+  setCurrentGroup(id) {
+    const currentGroup = this.state.data.filter( item => item._id === id);
+
     this.setState({
-      currentGroup: data
+      currentGroup
     })
   }
 
@@ -41,7 +42,7 @@ class Test extends React.Component {
       <section className="work white">
         <div className="data_items">
           { this.state.data.length > 0 && (
-              this.state.data.map((item,i) => <Item setCurrentGroup={ e => this.setCurrentGroup(e) } groupData={item} key={i}/>)
+              this.state.data.map((item,i) => <Item setCurrentGroup={ e => this.setCurrentGroup(e) } groupData={{...item}} key={i}/>)
             )
           }
           { this.state.data.length === null && (
@@ -55,7 +56,7 @@ class Test extends React.Component {
         </div>
 
         { this.state.currentGroup !== null && (
-            <Stats groupData={this.state.currentGroup}/>
+            <Stats groupData={{...this.state.currentGroup[0]}}/>
           )
         }
       </section>

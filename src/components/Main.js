@@ -3,18 +3,19 @@ import Form from './Main/form';
 import Loading from './Main/loading';
 import Stats from './Main/stats';
 import { Link } from 'react-router-dom'
-import DATA from './Main/data';
 import SaveButton from './Main/saveButton';
+
+import Notification from './Notification';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isSaved: false,
       isError: false,
       loading: false,
       currentGroup: null,
       groupData: null,
-      // groupData: DATA[0]
     };
   }
   
@@ -28,6 +29,7 @@ class Main extends React.Component {
 
   onSaveData() {
     this.setState({
+      isSaved: true,
       currentGroup: null,
       groupData: null
     })
@@ -100,6 +102,10 @@ class Main extends React.Component {
               <SaveButton groupData={this.state.groupData} onSaveData={ (e) => this.onSaveData(e)}/>
             )
           }          
+          {this.state.isSaved  && (
+              <Notification text={'data saved'}/>
+            )
+          }
       </section>
     )
   }

@@ -9,7 +9,7 @@ const saveButton = (props) => {
           ...groupData
       })
     if (save.status === 200) {
-      alert('Statistics saved!')
+      window.scrollTo(0, 0)
       props.onSaveData()
     }
   }

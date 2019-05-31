@@ -4,9 +4,10 @@ import { Bar } from 'react-chartjs-2';
 const color1 = '#ff2d2d8c';
 
 const line = (props) => {
-
-  const count = props.statistics.reach.pop().age.map(item => item.count)
-  const value = props.statistics.reach.pop().age.map(item => item.value)
+  const lastIndex = props.statistics.reach.length - 1;
+  
+  const count = props.statistics.reach[lastIndex].age.map(item => item.count)
+  const value = props.statistics.reach[lastIndex].age.map(item => item.value)
 
   const dataVisitors = {
     labels: value,

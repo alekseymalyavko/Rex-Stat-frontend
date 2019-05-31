@@ -37,8 +37,8 @@ class App extends React.Component {
             <Route exact path='/' 
                    render={() => <Home openPopup={(e) => this.openPopup(e)}/>}
             />
-            <Route path='/main' component={Main}/>
-            <Route path='/collection' component={Collection}/>
+            <Route exact path='/main' component={Main}/>
+            <Route exact path='/collection' component={Collection}/>
             <Redirect to='/'/>
           </Switch>
         <Footer />
