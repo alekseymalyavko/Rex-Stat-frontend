@@ -117,7 +117,7 @@ class Main extends React.Component {
             )
           }          
           {this.state.isSaved  && (
-              <Notification text={'data saved'}/>
+              <Notification text={'Data saved'}/>
             )
           }
       </section>
