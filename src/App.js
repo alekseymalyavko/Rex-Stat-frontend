@@ -12,6 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isAuth: true,
       isPopupOpen: false
     }
   }
@@ -22,7 +23,7 @@ class App extends React.Component {
     });
   }
 
-  closePopup(e) {
+  closePopup() {
     this.setState({
       isPopupOpen: false
     });

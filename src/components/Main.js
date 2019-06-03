@@ -35,6 +35,14 @@ class Main extends React.Component {
     })
   }
 
+  cleanState() {
+    this.setState({
+      loading: false,
+      currentGroup: null,
+      groupData: null,
+    })
+  }
+
   onGetData(data) {
     if (data === 0) {
       this.setState({
@@ -100,6 +108,12 @@ class Main extends React.Component {
 
           { this.state.groupData !== null && this.state.loading === false && this.state.groupData.allActivity &&  (
               <SaveButton groupData={this.state.groupData} onSaveData={ (e) => this.onSaveData(e)}/>
+            )
+          } 
+          { this.state.groupData !== null && this.state.loading === false && this.state.groupData.allActivity &&  (
+              <div className="button_work clean" onClick={ () => this.cleanState(null) }>
+                <span className="btn module">Отчистить</span>
+              </div>
             )
           }          
           {this.state.isSaved  && (

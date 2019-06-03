@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
 class Popup extends React.Component {
   constructor(props) {
@@ -8,6 +9,13 @@ class Popup extends React.Component {
       login: '',
       password: ''
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    const currentRoute = this.props.location.pathname
+    if (currentRoute !== prevProps.location.pathname) {
+      this.closePopup()
+    }
   }
 
   closePopup(e) {
@@ -20,7 +28,7 @@ class Popup extends React.Component {
     const password = this.state.password
 
     if (login === 'admin' && password === 'admin') {
-      window.location = '/main'
+      this.props.history.push('/main')
     } else {
       this.setState({
         isCorrect: false
@@ -62,4 +70,4 @@ class Popup extends React.Component {
   }
 }
 
-export default Popup;
+export default withRouter(Popup);

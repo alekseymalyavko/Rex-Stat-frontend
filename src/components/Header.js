@@ -25,7 +25,7 @@ class Header extends React.Component {
     }
   }
 
-  openPopup(e) {
+  openPopup() {
     this.props.openPopup()
   }
   

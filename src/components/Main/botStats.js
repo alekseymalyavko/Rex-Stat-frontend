@@ -5,7 +5,7 @@ const botStats = (props) => {
   const percentOfBots = props.percentOfBots;
   const count = props.count
   return (
-    <div className="work__items__item markovInfo" >
+    <div className="work__items__item bots" >
         <h2>Примерное количество ботов в группе</h2>
         <div>
             <p>Из общего числа агентов N ({count}) являются ботами {Math.ceil(calculatedData.N * percentOfBots / 100)} , ботов в группе {Math.round(percentOfBots)}%.</p>    
