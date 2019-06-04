@@ -29,6 +29,7 @@ class Main extends React.Component {
 
   onSaveData() {
     this.setState({
+      isError: false,
       isSaved: true,
       currentGroup: null,
       groupData: null
