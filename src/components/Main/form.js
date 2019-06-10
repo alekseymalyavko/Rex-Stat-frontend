@@ -6,8 +6,8 @@ class Form extends React.Component {
     super(props);
     this.state = {
       from: '2019-05-25',
-      to:'2019-06-03',
-      groupName: 'https://vk.com/goaltime'
+      to:'2019-06-10',
+      groupName: 'https://vk.com/fc_liverpool'
     };
   }
 
