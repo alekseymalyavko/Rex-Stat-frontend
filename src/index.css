@@ -182,7 +182,16 @@ footer {
   background: #4aa92b;
 }
 
-
+.button_excel {
+  width: 200px;
+  height: 40px;
+  line-height: 2.3;
+  text-align: center;
+  color: #fff;
+  background: #ff4848;
+  border-radius: 3px;
+  cursor: pointer;
+}
 
 /* HEADER */
 .header {

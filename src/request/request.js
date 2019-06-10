@@ -7,3 +7,7 @@ export const HTTP = axios.create({
     'Content-Type': 'application/json',
   },
 })
+
+export const HTTP_1 = axios.create({
+  baseURL: process.env.REACT_APP_API || 'http://localhost:3001',
+})
