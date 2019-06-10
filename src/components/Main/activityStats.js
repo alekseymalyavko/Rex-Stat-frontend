@@ -7,9 +7,7 @@ const activityStats = (props) => {
   const members = props.members;
   
   const getExcel = async () => {
-    const activity = allActivity
-    const excel = await HTTP_1.post('http://localhost:3001/api/stats/excel', activity, {responseType: 'blob'})
-
+    const excel = await HTTP_1.post('http://localhost:3001/api/stats/excel', allActivity, {responseType: 'blob'})
     const blob = new Blob([excel.data], 
       { 
         type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,', 
