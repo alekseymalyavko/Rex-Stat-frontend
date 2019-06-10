@@ -22,7 +22,7 @@ class Test extends React.Component {
   
   setCurrentGroup(id) {
     const currentGroup = this.state.data.filter( item => item._id === id);
-
+    console.log(111, this)
     this.setState({
       currentGroup
     })
@@ -34,15 +34,23 @@ class Test extends React.Component {
       loading: false,
       data: [...result.data]
     })
-    console.log(this.state.data)
   }
 
   render() {
+    let activeId = '' 
+    if (this.state.currentGroup !== null) {
+      activeId = this.state.currentGroup[0]._id
+    }
+
     return (
       <section className="work white">
         <div className="data_items">
           { this.state.data.length > 0 && (
-              this.state.data.map((item,i) => <Item setCurrentGroup={ e => this.setCurrentGroup(e) } groupData={{...item}} key={i}/>)
+              this.state.data.map((item,i) => 
+                <Item setCurrentGroup={ e => this.setCurrentGroup(e) } 
+                      activeId= { activeId } 
+                      groupData={{...item}} key={i}/>
+              )
             )
           }
           { this.state.data.length === null && (

@@ -137,7 +137,9 @@ footer {
   box-shadow: 1px 5px 20px #5a002f;
   transition: 0.3s;
 }
-
+.group_item.active {
+  outline: 5px solid #56a92b;
+}
 .group_item_name {
   font-size: 17px;
   font-weight: 500;

@@ -30,6 +30,8 @@ class Item extends React.Component {
   }
 
   render() {
+    const isActive = this.props.activeId === this.state.id
+
     const lastIndex = this.state.data.statistics.date.length - 1;
 
     const name = this.state.data.basicInfo.name;
@@ -42,7 +44,7 @@ class Item extends React.Component {
     }
 
     return (
-      <div className="group_item">
+      <div className={ isActive ? 'group_item active' : 'group_item' }>
         <div className="group_item_text">
           <div className="group_item_name">
             {name}
