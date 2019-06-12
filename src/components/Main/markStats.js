@@ -6,7 +6,7 @@ const markStats = (props) => {
   const dataForMark = props.dataForMark;
   
   const getExcel = async () => {
-    const excel = await HTTP_1.post('http://localhost:3001/api/stats/excel', dataForMark, {responseType: 'blob'})
+    const excel = await HTTP_1.post('/api/stats/excel', dataForMark, {responseType: 'blob'})
     const blob = new Blob([excel.data], 
       { 
         type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,', 

@@ -22,7 +22,6 @@ class Test extends React.Component {
   
   setCurrentGroup(id) {
     const currentGroup = this.state.data.filter( item => item._id === id);
-    console.log(111, this)
     this.setState({
       currentGroup
     })
