@@ -25,7 +25,7 @@ const line = (props) => {
         borderWidth: 2,
       },
       {
-        label: 'Комментраии',
+        label: 'Комментарии',
         data: comments,
         borderColor: color2,
         backgroundColor: color2,
